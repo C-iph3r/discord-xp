@@ -20,6 +20,7 @@ class DiscordXp {
 	static async setURL(dbUrl) {
 		if (!dbUrl) throw new TypeError('A database url was not provided.');
 		mongoUrl = dbUrl;
+		mongoose.set('strictQuery', false);
 		return mongoose.connect(dbUrl);
 	}
 
